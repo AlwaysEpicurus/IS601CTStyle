@@ -22,11 +22,6 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../static/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    {% if user %}
-    <title>Welcome to {{ user.username }}'s site</title>
-    {% else %}
-    <title>Welcome to {{ username }}'s Site!</title>
-    {% endif %}
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
           name='viewport'/>
     <!--     Fonts and icons     -->
@@ -36,7 +31,11 @@
     <!-- CSS Files -->
     <link href="../static/assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../static/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet"/>
-
+    {% if user %}
+    <title>Welcome to {{ user.username }}'s site</title>
+    {% else %}
+    <title>Welcome to {{ username }}'s Site!</title>
+    {% endif %}
 </head>
 
 <body class="">
@@ -46,8 +45,11 @@
           Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
       -->
         <div class="logo">
-            <a class="navbar-brand" href="#">{% if user %}{{ username }}'s Homepage{% else %}
-                {% endif %}</a>
+            {% if user %}
+            <a href="/" class="simple-text logo-normal">{{ user.username }}'s Homepage</a>
+            {% else %}
+            <a href="/" class="simple-text logo-normal">{{ username }}'s Homepage</a>
+            {% endif %}
         </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">
             <ul class="nav">
