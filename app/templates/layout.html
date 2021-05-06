@@ -32,9 +32,9 @@
     <link href="../static/assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../static/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet"/>
     {% if user %}
-    <title>Welcome to {{ user.username }}'s site</title>
+    <title>{{ user.username }}'s Secrete Access</title>
     {% else %}
-    <title>Welcome to {{ username }}'s Site!</title>
+    <title>Welcome to {{ username }}'s Secrete Access</title>
     {% endif %}
 </head>
 
@@ -46,9 +46,9 @@
       -->
         <div class="logo">
             {% if user %}
-            <a href="/" class="simple-text logo-normal">{{ user.username }}'s Homepage</a>
+            <a href="/" class="simple-text logo-normal">{{ user.username }}'s Secrete Access</a>
             {% else %}
-            <a href="/" class="simple-text logo-normal">{{ username }}'s Homepage</a>
+            <a href="/" class="simple-text logo-normal">{{ username }}'s Secrete Access</a>
             {% endif %}
         </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">
