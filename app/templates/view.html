@@ -1,46 +1,22 @@
 {% extends "layout.html" %}
 {% block content %}
-<form action="/cities/new" method="POST">
-    <div class="row">
-        <div class="col">
-            <label for="fldName">Asset</label>
-            <input id="fldName" type="text" class="form-control" placeholder="Asset" name="fldName">
-        </div>
-        <div class="col">
-            <label for="fldAbbreviation">Durability</label>
-            <input id="fldAbbreviation" type="text" class="form-control" placeholder="Durability"
-                   name="fldAbbreviation">
-        </div>
-        <div class="col">
-            <label for="fldCountry">Speed</label>
-            <input id="fldCountry" type="text" class="form-control" placeholder="Speed" name="fldCountry">
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col">
-            <label for="fldLat">Intelligence</label>
-            <input id="fldLat" type="text" class="form-control" placeholder="Intelligence" name="fldLat">
-        </div>
-        <div class="col">
-            <label for="fldlong">Strength</label>
-            <input id="fldlong" type="text" class="form-control" placeholder="Strength" name="fldLong">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label for="fldCapitalStatus">Power</label>
+<div class="card" class="m-5 p-2">
+    <h5 class="card-title">{{ city.year }}</h5>
 
-            <input id="fldCapitalStatus" type="text" class="form-control" placeholder="Power "
-                   name="fldCapitalStatus">
-        </div>
-        <div class="col">
-            <label for="fldPopulation">Combat</label>
-            <input id="fldPopulation" type="text" class="form-control" placeholder="Population" name="Combat">
-        </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Intelligence{{ city.fldLat }}</li>
+        <li class="list-group-item">Strength{{ city.fldLong }}</li>
+        <li class="list-group-item">Speed{{ city.fldCountry }}</li>
+        <li class="list-group-item">Durability{{ city.fldAbbreviation }}</li>
+        <li class="list-group-item">Power{{ city.fldCapitalStatus }}</li>
+        <li class="list-group-item">Power{{ city.fldPopulation }}</li>
+    </ul>
+    <div class="card-body">
+        <a href="/edit/{{city.id}}" class="card-link btn btn-primary">edit</a>
     </div>
-    <button type="submit" class="btn btn-success">Success</button>
+</div>
+<form action="/delete/{{city.id}}" method="post"><button type="submit" class="btn btn-danger">Save</button></form>
 
-</form>
 
 {% endblock %}
