@@ -2,7 +2,7 @@ version: "3.9"
 services:
   app:
     build: app
-    container_name: "Flask_AppCTStyle4"
+    container_name: "Flask_AppCTStyle5"
     links:
       - db
     depends_on:
@@ -12,7 +12,7 @@ services:
 
   db:
     image: mysql:5.7
-    container_name: "MySQL_DatabaseCTStyle4"
+    container_name: "MySQL_DatabaseCTStyle5"
     ports:
       - "32000:3306"
     environment:

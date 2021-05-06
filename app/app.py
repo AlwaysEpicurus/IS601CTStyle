@@ -157,26 +157,26 @@ def create_mean_chart():
     # Translate Json Objects to a list of Population
     # Depending on variable chosen
     converted_list_of_values = []
-    if selected_variable == 'PopulationA':
-        logging.warning("PopulationA Selected")
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+    if selected_variable == 'Intelligence':
+        logging.warning("Intelligence Selected")
+        cursor.execute('SELECT fldLat FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldLat'))
 
-    elif selected_variable == 'Population1':
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+    elif selected_variable == 'Strength':
+        cursor.execute('SELECT fldLong FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldLong'))
     else:
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+        cursor.execute('SELECT fldCountry FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldCountry'))
 
     mean_value = round(mean(converted_list_of_values))
     list_of_names = []
@@ -206,26 +206,26 @@ def create_median_chart():
     # Translate Json Objects to a list of Populations
     # Depending on variable chosen
     converted_list_of_values = []
-    if selected_variable == 'PopulationA':
-        logging.warning("PopulationA Selected")
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+    if selected_variable == 'Intelligence':
+        logging.warning("Intelligence Selected")
+        cursor.execute('SELECT fldLat FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldLat'))
 
-    elif selected_variable == 'Population1':
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+    elif selected_variable == 'Strength':
+        cursor.execute('SELECT fldLong FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldLong'))
     else:
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+        cursor.execute('SELECT fldCountry FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldCountry'))
 
     median_value = round(median(converted_list_of_values))
     list_of_names = []
@@ -255,26 +255,26 @@ def create_mode_chart():
     # Translate Json Objects to a list of Populations
     # Depending on variable chosen
     converted_list_of_values = []
-    if selected_variable == 'PopulationA':
-        logging.warning("PopulationA Selected")
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+    if selected_variable == 'Intelligence':
+        logging.warning("Intelligence Selected")
+        cursor.execute('SELECT fldLat FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldLat'))
 
-    elif selected_variable == 'Population1':
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+    elif selected_variable == 'Strength':
+        cursor.execute('SELECT fldLong FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldLong'))
     else:
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+        cursor.execute('SELECT fldCountry FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldCountry'))
 
     mode_value = mode(converted_list_of_values)
     list_of_names = []
@@ -303,26 +303,26 @@ def create_standard_deviation_chart():
     # Translate Json Objects to a list of Populations
     # Depending on variable chosen
     converted_list_of_values = []
-    if selected_variable == 'PopulationA':
-        logging.warning("PopulationA Selected")
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+    if selected_variable == 'Intelligence':
+        logging.warning("Intelligence Selected")
+        cursor.execute('SELECT fldLat FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldLat'))
 
-    elif selected_variable == 'Population1':
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+    elif selected_variable == 'Strength':
+        cursor.execute('SELECT fldLong FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldLong'))
     else:
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+        cursor.execute('SELECT fldCountry FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldCountry'))
 
     standard_deviation_value = standard_deviation(converted_list_of_values)
     list_of_names = []
@@ -352,26 +352,26 @@ def create_variance_chart():
     # Translate Json Objects to a list of Populations
     # Depending on variable chosen
     converted_list_of_values = []
-    if selected_variable == 'PopulationA':
-        logging.warning("PopulationA Selected")
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+    if selected_variable == 'Intelligence':
+        logging.warning("Intelligence Selected")
+        cursor.execute('SELECT fldLat FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldLat'))
 
-    elif selected_variable == 'Population1':
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+    elif selected_variable == 'Strength':
+        cursor.execute('SELECT fldLong FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldLong'))
     else:
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+        cursor.execute('SELECT fldCountry FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldCountry'))
 
     variance_value = variance(converted_list_of_values)
     list_of_names = []
@@ -399,26 +399,26 @@ def create_zscore_chart():
     # Translate Json Objects to a list of Populations
     # Depending on variable chosen
     converted_list_of_values = []
-    if selected_variable == 'PopulationA':
-        logging.warning("PopulationA Selected")
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+    if selected_variable == 'Intelligence':
+        logging.warning("Intelligence Selected")
+        cursor.execute('SELECT fldLat FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldLat'))
 
-    elif selected_variable == 'Population1':
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+    elif selected_variable == 'Strength':
+        cursor.execute('SELECT fldLong FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldLong'))
     else:
-        cursor.execute('SELECT fldPopulation FROM tblCitiesImport')
+        cursor.execute('SELECT fldCountry FROM tblCitiesImport')
         query_results = cursor.fetchall()
 
         for query_result in query_results:
-            converted_list_of_values.append(query_result.get('fldPopulation'))
+            converted_list_of_values.append(query_result.get('fldCountry'))
 
     zscore_value = zscore(converted_list_of_values, raw_score)
     logging.warning('zscore_value')
