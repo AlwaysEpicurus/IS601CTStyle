@@ -2,20 +2,21 @@
 {% block content %}
 
 <div class="card" class="m-5 p-2">
-    <h5 class="card-title">{{ city.fldName }} - {{ city.fldAbbreviation }}</h5>
+    <h5 class="card-title">{{ city.year }}</h5>
 
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ city.fldLat }}</li>
-        <li class="list-group-item">{{ city.fldLong }}</li>
-        <li class="list-group-item">{{ city.fldCapitalStatus }}</li>
-        <li class="list-group-item">{{ city.fldCountry }}</li>
-        <li class="list-group-item">{{ city.fldPopulation }}</li>
+        <li class="list-group-item">Intelligence{{ city.fldLat }}</li>
+        <li class="list-group-item">Strength{{ city.fldLong }}</li>
+        <li class="list-group-item">Speed{{ city.fldCountry }}</li>
+        <li class="list-group-item">Durability{{ city.fldAbbreviation }}</li>
+        <li class="list-group-item">Power{{ city.fldCapitalStatus }}</li>
+        <li class="list-group-item">Power{{ city.fldPopulation }}</li>
     </ul>
     <div class="card-body">
         <a href="/edit/{{city.id}}" class="card-link btn btn-primary">edit</a>
     </div>
 </div>
-<form action="/delete/{{city.id}}" method="post"><button type="submit" class="btn btn-danger">Delete</button></form>
+<form action="/delete/{{city.id}}" method="post"><button type="submit" class="btn btn-danger">Save</button></form>
 
 
 {% endblock %}

@@ -32,9 +32,9 @@
     <link href="../static/assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../static/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet"/>
     {% if user %}
-    <title>Welcome to {{ user.username }}'s site</title>
+    <title>{{ user.username }}'s Secrete Access</title>
     {% else %}
-    <title>Welcome to {{ username }}'s Site!</title>
+    <title>Welcome to {{ username }}'s Secrete Access</title>
     {% endif %}
 </head>
 
@@ -45,11 +45,7 @@
           Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
       -->
         <div class="logo">
-            {% if user %}
-            <a href="/" class="simple-text logo-normal">{{ user.username }}'s Homepage</a>
-            {% else %}
-            <a href="/" class="simple-text logo-normal">{{ username }}'s Homepage</a>
-            {% endif %}
+            <a href="/" class="simple-text logo-normal">SECRET: SUPER ASSETS</a>
         </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">
             <ul class="nav">
