@@ -72,7 +72,7 @@ def logout():
     return redirect( url_for( 'login' ) )
 
 
-@app.route( '/pythonlogin/register', methods=['GET', 'POST'] )
+@app.route( '/login/register', methods=['GET', 'POST'] )
 def register():
     # Output message if something goes wrong...
     msg = ''
