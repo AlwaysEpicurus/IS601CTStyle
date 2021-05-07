@@ -24,7 +24,7 @@ app.config['MYSQL_DATABASE_PORT'] = 3306
 app.config['MYSQL_DATABASE_DB'] = 'citiesData'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'steelersfan071497@gmail.com'
+app.config['MAIL_USERNAME'] = 'test@gmail.com'
 app.config['MAIL_PASSWORD'] = '**********'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
@@ -105,6 +105,26 @@ def register():
         msg = 'Please fill out the form!'
     # Show registration form with message (if any)
     return render_template( 'register.html', msg=msg )
+
+@app.route('/initialVerify')
+def initVerify():
+    return render_template("initialVerify.html")
+
+@app.route('/verify',methods=['GET', 'POST'])
+def verify():
+    email=request.form['email']
+    msg=Message(subject='OTP',sender='test@gmail.com',recipients=[email])
+    msg.body=str(otp)
+    mail.send(msg)
+    return render_template('verify.html')
+
+@app.route('/validate',methods=['POST'])
+def validate():
+    user_otp=request.form['otp']
+    if otp==int(user_otp):
+        flash('You were successfully verified')
+        return redirect(url_for('login'))
+    return "<h3>Please Try Again</h3>"
 
 
 #  WIP 1
