@@ -3,8 +3,8 @@ import re
 from random import *
 import mysql.connector
 import simplejson as json
-from flask import Flask, request, Response, redirect, render_template, session, url_for
-from flask_mail import Mail
+from flask import Flask, flash,request, Response, redirect, render_template, session, url_for
+from flask_mail import Mail, Message
 from flaskext.mysql import MySQL
 from pymysql.cursors import DictCursor
 import logging
@@ -24,8 +24,8 @@ app.config['MYSQL_DATABASE_PORT'] = 3306
 app.config['MYSQL_DATABASE_DB'] = 'citiesData'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'test@gmail.com'
-app.config['MAIL_PASSWORD'] = '**********'
+app.config['MAIL_USERNAME']='test@gmail.com'
+app.config['MAIL_PASSWORD']='*******'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail( app )
@@ -100,6 +100,7 @@ def register():
             cursor.execute( 'INSERT INTO accounts VALUES (NULL, %s, %s, %s)', (username, password, email,) )
             mysql.get_db().commit()
             msg = 'You have successfully registered!'
+            return redirect(url_for('initVerify'))
     elif request.method == 'POST':
         # Form is empty... (no POST data)
         msg = 'Please fill out the form!'
@@ -113,7 +114,7 @@ def initVerify():
 @app.route('/verify',methods=['GET', 'POST'])
 def verify():
     email=request.form['email']
-    msg=Message(subject='OTP',sender='test@gmail.com',recipients=[email])
+    msg=Message(subject='OTP',sender='steelersfan071497@gmail.com',recipients=[email])
     msg.body=str(otp)
     mail.send(msg)
     return render_template('verify.html')
