@@ -3,5 +3,5 @@
 ![New Look](app/static/assets/img/NewLook.png)
 
 
-* [Docker Installation Instructions](IS601CTStyle/Installation instructions for using the app with Docker Document.pdf)
-* [Feature Documentation](IS601CTStyle/Documentation for IS601 Final Team Project.pdf)
+* [Docker Installation Instructions](Installation_instructions_for_using_the_app_with_Docker_Document.pdf)
+* [Feature Documentation](Documentation_for_IS601_Final_Team_Project.pdf)
